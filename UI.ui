@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -51,7 +51,7 @@
           <x>0</x>
           <y>190</y>
           <width>361</width>
-          <height>141</height>
+          <height>101</height>
          </rect>
         </property>
         <property name="title">
@@ -62,8 +62,8 @@
           <rect>
            <x>10</x>
            <y>20</y>
-           <width>331</width>
-           <height>111</height>
+           <width>341</width>
+           <height>71</height>
           </rect>
          </property>
         </widget>
@@ -72,9 +72,9 @@
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>340</y>
+          <y>300</y>
           <width>361</width>
-          <height>141</height>
+          <height>181</height>
          </rect>
         </property>
         <property name="title">
@@ -85,8 +85,18 @@
           <rect>
            <x>10</x>
            <y>20</y>
-           <width>331</width>
-           <height>101</height>
+           <width>341</width>
+           <height>71</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="textEdit_c_m">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>100</y>
+           <width>341</width>
+           <height>71</height>
           </rect>
          </property>
         </widget>
@@ -246,7 +256,7 @@
           <rect>
            <x>10</x>
            <y>20</y>
-           <width>331</width>
+           <width>341</width>
            <height>81</height>
           </rect>
          </property>
@@ -270,7 +280,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
@@ -383,7 +393,7 @@
          <x>0</x>
          <y>160</y>
          <width>481</width>
-         <height>151</height>
+         <height>111</height>
         </rect>
        </property>
        <property name="title">
@@ -395,7 +405,7 @@
           <x>10</x>
           <y>20</y>
           <width>381</width>
-          <height>111</height>
+          <height>81</height>
          </rect>
         </property>
        </widget>
@@ -417,9 +427,9 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>320</y>
+         <y>270</y>
          <width>481</width>
-         <height>151</height>
+         <height>211</height>
         </rect>
        </property>
        <property name="title">
@@ -446,6 +456,16 @@
         </property>
         <property name="text">
          <string>解密</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_LC_M">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>140</y>
+          <width>381</width>
+          <height>71</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -525,7 +545,7 @@
          <x>0</x>
          <y>160</y>
          <width>481</width>
-         <height>151</height>
+         <height>111</height>
         </rect>
        </property>
        <property name="title">
@@ -537,7 +557,7 @@
           <x>10</x>
           <y>20</y>
           <width>381</width>
-          <height>111</height>
+          <height>81</height>
          </rect>
         </property>
        </widget>
@@ -559,9 +579,9 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>320</y>
+         <y>270</y>
          <width>481</width>
-         <height>151</height>
+         <height>211</height>
         </rect>
        </property>
        <property name="title">
@@ -588,6 +608,16 @@
         </property>
         <property name="text">
          <string>解密</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_LC_2_M">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>140</y>
+          <width>381</width>
+          <height>71</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -636,7 +666,7 @@
       <rect>
        <x>10</x>
        <y>520</y>
-       <width>421</width>
+       <width>411</width>
        <height>111</height>
       </rect>
      </property>
@@ -648,7 +678,7 @@
        <rect>
         <x>10</x>
         <y>20</y>
-        <width>391</width>
+        <width>381</width>
         <height>81</height>
        </rect>
       </property>

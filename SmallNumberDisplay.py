@@ -1,4 +1,5 @@
 import random
+import base64
 class SmallNumberDisplay:
     @staticmethod
     def gcd(a, b):
@@ -110,28 +111,39 @@ class SmallNumberDisplay:
         return n, e, d, p, q, phi_n, dp, dq,  inv_p
 
     @staticmethod
+    def encode(msg):
+        encoded_message = base64.b64encode(str(msg).encode('utf-8'))
+        return encoded_message.decode('utf-8')
+
+    @staticmethod
+    def decode(msg):
+        s = base64.b64decode(msg.encode('utf-8'))
+        ciphertext = eval(s.decode('utf-8'))
+        return ciphertext
+
+    @staticmethod
     def encrypt(message, e, n):
         """使用 RSA 公钥加密消息"""
         encrypted_message = []
         for char in message:
             char_ord = ord(char)
-            print(f"加密字符 '{char}' 的 ASCII 码为 {char_ord}")
             encrypted_char = SmallNumberDisplay.pow_mod(char_ord, e, n)
-            print(f"加密字符 '{char}' 的加密结果为 {encrypted_char}")
             encrypted_message.append(encrypted_char)
-        return encrypted_message
+        print(SmallNumberDisplay.encode(encrypted_message))
+        return SmallNumberDisplay.encode(encrypted_message)
 
     @staticmethod
     def decrypt(ciphertext, p, q, dp, dq, inv_p):
         """使用 RSA 私钥解密密文"""
         decrypted_message = ''
-        for char in ciphertext:
+        ciphertext_decode = SmallNumberDisplay.decode(ciphertext)
+        for char in ciphertext_decode:
             m1 = SmallNumberDisplay.pow_mod(char, dp, p)
             m2 = SmallNumberDisplay.pow_mod(char, dq, q)
             inv_q = (1 - p * inv_p) // q
             m = (m1 * q * inv_q + m2 * p * inv_p) % (p * q)
-            print(f"解密字符 '{char}' 的解密结果为 {m}")
             decrypted_message += chr(m)
+        print(decrypted_message)
         return decrypted_message
 
     @staticmethod

@@ -78,13 +78,12 @@ class MyWindow(QWidget, Ui_Form, SmallNumberDisplay):
     def encrypt_values(self):
         message = self.textEdit_m.toPlainText()
         encrypted_message = SmallNumberDisplay.encrypt(message, self.e, self.n)
-        self.textEdit_c.setText(str(encrypted_message))
+        self.textEdit_c.setText(encrypted_message)
 
     def decrypt_values(self):
-        s = self.textEdit_c.toPlainText()
-        ciphertext = eval(s)
+        ciphertext = self.textEdit_c.toPlainText()
         decrypted_message = SmallNumberDisplay.decrypt(ciphertext, self.p, self.q, self.dp, self.dq, self.inv_p)
-        self.textEdit_m.setText(str(decrypted_message))
+        self.textEdit_c_m.setText(decrypted_message)
 
 
     def trial_division_values(self):
@@ -110,7 +109,7 @@ class MyWindow(QWidget, Ui_Form, SmallNumberDisplay):
         hex_encrypted_msg = self.textEdit_LC.toPlainText()
         encrypted_msg = bytes.fromhex(hex_encrypted_msg)
         decrypted_msg = RSA.decrypt_msg_with_key(encrypted_msg, private_key)
-        self.textEdit_LM.setText(str(decrypted_msg.decode('utf-8')))
+        self.textEdit_LC_M.setText(str(decrypted_msg.decode('utf-8')))
 
     def generate_key_values(self):
         key_sizs_values = int(self.comboBox_aes.currentText())
@@ -130,10 +129,8 @@ class MyWindow(QWidget, Ui_Form, SmallNumberDisplay):
         hex_ciphertext = self.textEdit_LC_2.toPlainText()
         ciphertext = bytes.fromhex(hex_ciphertext)
         decrypted_msg = AESCipher.decrypt(ciphertext, key)
-        self.textEdit_LM_2.setText(str(decrypted_msg.decode('utf-8')))
+        self.textEdit_LC_2_M.setText(str(decrypted_msg.decode('utf-8')))
 
-
-# 自定义的输出流，将输出重定向到某个地方
 
 
 

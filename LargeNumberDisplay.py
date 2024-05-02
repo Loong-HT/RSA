@@ -7,6 +7,7 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from tkinter import filedialog, messagebox
+from SmallNumberDisplay import SmallNumberDisplay
 import os
 class RSA:
     backend = default_backend()
@@ -53,7 +54,7 @@ class RSA:
                 msg.encode('utf-8'),
                 padding.PKCS1v15()
             )
-            print(f"加密后的密文：{encrypted.hex()}")
+            print(f"加密后的密文：{SmallNumberDisplay.decode(encrypted)}")
             return encrypted
         except Exception as e:
             logging.error(f'Encryption failed: {e}')
